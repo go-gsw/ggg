@@ -1,0 +1,143 @@
+nav
+{
+	background: #ccc;
+	height: 50px;
+}
+#banner
+{
+	background: #777;
+	height: 700px;
+}
+nav ul
+{
+	list-style: none;
+	margin: 0; 
+	float: right;
+}
+nav ul li,nav .logo
+{
+	display: inline-block;
+	line-height: 50px;
+	margin-right: 20px;
+}
+nav ul li a
+{
+	line-height: inherit;
+	text-decoration: none;
+	display: inline-block;
+	height: inherit;
+	color: #fff;
+}
+nav .logo
+{
+	float: left;
+	font-size: 25px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	padding-left: 15px;
+}
+.logo a
+{
+	text-decoration: none;
+	color: #fff;
+}
+#banner .inner
+{
+	max-width: 200px;
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	top: 180px;
+}
+#banner .inner h1
+{
+    margin: 0;
+    font-weight: bold;
+
+}
+#banner .inner .more
+{
+	margin-top: 280px;
+}
+
+h1
+{
+	padding: 12px;
+	border-top: 1.5px solid #fff;
+	border-bottom:1.5px solid #fff;
+}
+
+
+button
+{
+	border: none;
+	background: #333;
+	color: #eee;
+	padding: 10px;
+}
+#banner button
+{
+	padding: 10px 25px;
+}
+.sub-heading
+{
+	line-height:30px;
+	margin:20px;
+}
+
+.content
+{
+	margin-top: 0;
+}
+h2
+{
+	margin: 0;
+	font-size: 30px;
+}
+
+.hr
+{
+	width: 100%;
+	height: 2px;
+	margin: 20px auto;
+}
+
+.green-section
+{
+	text-align: center;
+	background: #06BBA8;
+	color: #fff;
+	padding: 100px 0;
+}
+
+.green-section .hr
+{
+	background: #05AF9D;
+	width: 50%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.wrapper
+{
+	max-width: 1080px;
+	margin: auto;
+}
+
+.icon-group
+{
+	margin:60px auto;
+}
+/*
+每一个green-section下的icon-group的icon的样式。
+*/
+.green-section .icon-group .icon
+{
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	border: 1.5px dashed rgba(146, 137, 137, 0.76);
+	background: rgba(1, 190, 191, 0.5);
+	transform: rotate(45deg);
+	margin:30px;
+}
