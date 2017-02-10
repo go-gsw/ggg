@@ -1,11 +1,23 @@
+/*专门清除浮动*/
+.clearfix:after
+{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+header
+{
+	background: rgba(0,0,0,0.3);
+}
 nav
 {
-	background: #ccc;
+	background: transparent;
 	height: 50px;
 }
 #banner
 {
-	background: #777;
+	background: transparent;
 	height: 700px;
 }
 nav ul
@@ -53,11 +65,13 @@ nav .logo
 {
     margin: 0;
     font-weight: bold;
+    color: #fff;
 
 }
 #banner .inner .more
 {
-	margin-top: 280px;
+	margin-top: 250px;
+	color: #fff;
 }
 
 h1
@@ -78,11 +92,13 @@ button
 #banner button
 {
 	padding: 10px 25px;
+	background: rgba(0,0,0,0.4);
 }
 .sub-heading
 {
 	line-height:30px;
 	margin:20px;
+	color: #fff;
 }
 
 .content
@@ -105,9 +121,10 @@ h2
 .green-section
 {
 	text-align: center;
-	background: #06BBA8;
+	background: rgb(4, 165, 148);
 	color: #fff;
-	padding: 100px 0;
+	padding: 50px 0;
+	padding-bottom: 20px;
 }
 
 .green-section .hr
@@ -140,4 +157,197 @@ h2
 	background: rgba(1, 190, 191, 0.5);
 	transform: rotate(45deg);
 	margin:30px;
+}
+
+
+.artical-preview1 > div
+{
+	float: left;
+	font-size: 0;
+}
+
+
+.artical-preview2 > div
+{
+	font-size: 0;
+	float: right;
+}
+
+/*父级元素清除浮动*/
+.artical-preview1:after
+{
+	
+	content: '';
+	display: block;
+	clear: both;/*都清除*/
+
+}
+.artical-preview2:after
+{
+	
+	content: '';
+	display: block;
+	clear: both;/*都清除*/
+
+}
+
+.artical-preview1 
+{
+    background-color: rgba(255,255,255,0.05);
+}
+
+
+.gray-section
+{
+	background: #123144
+}
+.gray-section .img-section
+{
+	width: 40%;
+}
+
+.img-section img
+{
+	width: 100%;
+}
+.gray-section .text-section
+{
+	width: 55%;
+}
+
+.text-section >*
+{
+	max-width: 90%;
+}
+.text-section
+{
+	position: relative;
+    top: 80px;
+    left: 30px;
+    color: #fff;
+}
+.text-section h2
+{
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+.text-section h3
+{
+	font-size: 20px;
+}
+p
+{
+	letter-spacing: 1px;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+
+
+.purple-section
+{
+	background: rgb(55, 26, 86);
+	color: #fff;
+	
+	padding: 80px;
+}
+
+.purple-section .wrapper
+{
+	text-align: center;
+}
+
+.purple-section .sub-heading
+{
+	margin:0;
+}
+
+.purple-section .hr
+{
+	background: rgba(0,0,0, 0.16);
+	width: 70%;
+}
+.card-group
+{
+	padding: 20px;
+}
+
+/*.card-group:after
+{
+	
+	content: '';
+	display: block;
+	clear: both;
+
+}*/
+.card
+{
+	float: left;
+	width: 50%;
+	min-height: 300px;
+	padding: 50px;
+	box-sizing: border-box;
+	/*border: 1px solid white;*/
+}
+.card:first-child
+{
+	background: rgba(0,0,0,0.05);
+}
+.card:nth-child(2)
+{
+	background: rgba(0,0,0,0.1);
+}
+.card:nth-child(3)
+{
+	background: rgba(0,0,0,0.15);
+}
+.card:nth-child(4)
+{
+	background: rgba(0,0,0,0.2);
+}
+.card:nth-child(5)
+{
+	background: rgba(0,0,0,0.25);
+}
+.card:nth-child(6)
+{
+	background: rgba(0,0,0,0.3);
+}
+
+
+footer
+{
+	background: rgba(0,0,0,0.5);
+	color: #fff;
+	min-height: 150px;
+	text-align: center;
+}
+
+.share-group
+{
+	padding: 50px;
+	display: block;
+	list-style: none;
+	margin:0 auto;
+}
+.share-group li
+{
+	display: inline-block;
+	padding: 15px;
+}
+.copy
+{
+	padding-bottom: 20px;
+}
+
+
+
+.main-wrapper
+{
+	background: #444 url(../img/12.jpg);
+	background-attachment: fixed;
+	background-repeat: no-repeat;/*不重复*/
+	background-size: cover;/*以封面的大小来确定大小*/
+	/*background-position: center;*//*居中*/
 }
