@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多物体透明度运动</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<style>
+	div
+		{
+			width: 200px;
+			height: 200px;
+			background: red;
+			filter: alpha(opacity:30);
+			opacity: 0.3;
+			margin-right: 10px;
+			float: left;
+		}
+	</style>
+	<script>
+	window.onload=function(){
+		var oDiv=document.getElementsByTagName('div');
+		for (var i = 0; i < oDiv.length; i++) {
+			oDiv[i].timer=null;
+			oDiv[i].alpha=30;
+			oDiv[i].onmouseover=function(){
+				startMove(this,100);
+			}
+			oDiv[i].onmouseout=function(){
+				startMove(this,30);
+			}
+		}
+	}
+	/*多物体运动所有属性都不能共用*/
+	// var alpha=30;
+	function startMove(obj,target){
+		/*清除原有定时器，以防叠加*/
+		clearInterval(obj.timer);
+		// var oDiv1 =document.getElementById('div2');
+		obj.timer=setInterval(function(){
+			var speed=0;
+			if (obj.alpha>target) 
+				{speed=-15;}else{speed=15;}
+			if (obj.alpha== target) 
+				{clearInterval(obj.timer);}
+			else
+				{
+					obj.alpha+=speed;
+					obj.style.filter='alpha(opacity:'+obj.alpha+')';
+					obj.style.opacity=obj.alpha/100;
+				}
+		},30)
+	}
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+	<div id="div2"></div>
+	<div id="div3"></div>
+	<div id="div4"></div>
+</body>
+</html>

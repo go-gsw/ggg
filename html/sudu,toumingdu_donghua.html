@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS速度动画和透明度动画</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<style>
+		#div1
+			{
+				background: red;
+				width: 200px;
+				height: 200px;
+				position: relative;
+				left: -200px;
+			}
+		#div1 span
+			{
+				width: 20px;
+				height: 80px;
+				background: blue;
+				position: absolute;
+				left: 200px;
+				top:60px;
+			}
+		#div2
+			{
+				width: 200px;
+				height: 200px;
+				background: red;
+				filter: alpha(opacity:30);
+				opacity: 0.3;
+			}
+		#div3
+			{
+				background: red;
+				width: 200px;
+				height: 200px;
+				position: relative;
+				left: -200px;
+			}
+		#div3 span
+			{
+				width: 20px;
+				height: 80px;
+				background: blue;
+				position: absolute;
+				left: 200px;
+				top:60px;
+			}
+	</style>
+	<script>
+	/*onload不能同时加载多个函数*/
+	window.onload=function(){
+		var oDiv =document.getElementById('div1');
+		oDiv.onmouseover = function(){
+			startMove(0);
+		}
+		oDiv.onmouseout =function(){
+			startMove(-200);
+		}
+		var oDiv1 =document.getElementById('div2');
+		oDiv1.onmouseover = function(){
+			changeMove(90);
+		}
+		oDiv1.onmouseout =function(){
+			changeMove(30);
+		}
+		var oDiv2 =document.getElementById('div3');
+		oDiv2.onmouseover = function(){
+			huanchongMove(0);
+		}
+		oDiv2.onmouseout =function(){
+			huanchongMove(-200);
+		}
+	}
+	// var timer=null;
+
+
+	/*速度动画*/
+	function startMove(target){
+		/*清除原有定时器，以防叠加*/
+		var timer=null;
+		clearInterval(timer);
+		var oDiv =document.getElementById('div1');
+		timer=setInterval(function(){
+			var speed=0;
+			if (oDiv.offsetLeft>target) 
+				{speed=-10;}else{speed=10;}
+			if (oDiv.offsetLeft== target) 
+				{clearInterval(timer);}
+			else
+				{oDiv.style.left=oDiv.offsetLeft+speed+'px';}
+		},30)
+	}
+	/*window.onload=function(){
+		var oDiv1 =document.getElementById('div2');
+		oDiv1.onmouseover = function(){
+			changeMove(100);
+		}
+		oDiv1.onmouseout =function(){
+			changeMove(30);
+		}
+	}*/
+
+
+
+	/*透明度动画*/
+    var alpha=30;
+	function changeMove(target){
+		/*清除原有定时器，以防叠加*/
+		var timer=null;
+		clearInterval(timer);
+		var oDiv1 =document.getElementById('div2');
+		timer=setInterval(function(){
+			var speed=0;
+			if (alpha>target) 
+				{speed=-15;}else{speed=15;}
+			if (alpha== target) 
+				{clearInterval(timer);}
+			else
+				{
+					alpha+=speed;
+					oDiv1.style.filter='alpha(opacity:'+alpha+')';
+					oDiv1.style.opacity=alpha/100;
+				}
+		},30)
+	}
+
+
+
+
+	/*缓冲运动动画*/
+	// alert(Math.floor(3.99));向下取整
+	// alert(Math.ceil(3.4));向上取整
+	function huanchongMove(target){
+		/*清除原有定时器，以防叠加*/
+		var timer=null;
+		clearInterval(timer);
+		var oDiv =document.getElementById('div3');
+		timer=setInterval(function(){
+			var speed=(target-oDiv.offsetLeft)/5;
+			speed = speed >0?Math.ceil(speed):Math.floor(speed);
+			if (oDiv.offsetLeft== target) 
+				{clearInterval(timer);}
+			else
+				{oDiv.style.left=oDiv.offsetLeft+speed+'px';}
+		},30)
+	}
+	</script>
+</head>
+<body>
+	<div id="div1">
+		<span id="share">分享</span>
+	</div>
+	<div id="div2"></div>
+	<div id="div3">
+	<span id="hc">缓冲</span>
+	</div>
+</body>
+</html>

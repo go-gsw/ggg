@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多物体运动</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<style>
+		ul
+		{
+			margin:0;
+			padding: 0;
+		}
+		ul li
+		{
+			width: 200px;
+			height: 100px;
+			background: red;
+			list-style: none;
+			margin-bottom: 20px;
+			filter: alpha(opacity:30);
+			opacity: 0.3;
+		}
+	</style>
+	<script>
+	window.onload=function(){
+		var ali=document.getElementsByTagName('li');
+		for (var i = 0; i < ali.length; i++) {
+			ali[i].timer=null;
+			ali[i].onmouseover=function(){
+				startMove(this,400);
+			}
+			ali[i].onmouseout=function(){
+				startMove(this,200);
+			}
+		}
+	}
+	/*多物体运动所有属性都不能共用*/
+	/*Math.floor向下取整   Math.ceil向上取整*/
+	// var timer=null;
+	function startMove(obj,target){
+		clearInterval(obj.timer);
+		obj.timer=setInterval(function(){
+            var speed=(target-obj.offsetWidth)/8;
+            speed = speed >0?Math.ceil(speed):Math.floor(speed);
+            if (obj.offsetWidth==target)
+	            {clearInterval(obj.timer);}
+	        else{obj.style.width=obj.offsetWidth+speed+'px';}
+		},30)
+
+	}
+	</script>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>
