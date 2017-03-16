@@ -6,17 +6,18 @@
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/main.css">
 <!-- 	<style>#com{background: #aaa}</style>
- --></head>
+ -->
+</head>
 <body>
-	<div class="main-wrapper">
+	<div id="main-wrapper" style="background-color: #444; background-image:-webkit-linear-gradient(top, red, orange 25%, yellow 50%, green 75%, purple 100%);">
 	<header>
 		<nav>
 			<div class="logo"><a href="#">尚文</a></div>
-			<ul>
-			<li><a href="#" class="active">首页</a></li>
-			<li><a href="#">xuanxiang</a></li>
-			<li><a href="#">xuanxiang</a></li>
-			<li><a href="#">xuanxiang</a></li>
+			<ul id="imagegallery">
+			<li><a href="../img/13.jpg" id="shou">首页</a></li>
+			<li><a href="#">第二页</a></li>
+			<li><a href="#">第三页</a></li>
+			<li><a href="#">第四页</a></li>
 			<!-- li{item$}*7 -->
 			</ul>
 		</nav>
@@ -27,6 +28,9 @@
 			<button>了解我</button>
 			<div class="more">
 			more
+			</div>
+			<div id="more" style="visibility:visible">
+			<img src="../more_unfold.png" alt="向下" style="margin-top: 15px;">
 			</div>
 			</div>
 		</div>
@@ -41,9 +45,15 @@
 
 				</div>
 				<div class="icon-group">
-					<span class="icon">item1</span>
-					<span class="icon">item2</span>
-					<span class="icon">item3</span>
+					<span class="icon">
+					<img src="" alt="">
+					</span>
+					<span class="icon">
+					<img src="" alt="">
+					</span>
+					<span class="icon">
+					<img src="" alt="">
+					</span>
 				</div>
 			</div>
 		</section>
@@ -128,5 +138,19 @@
 		</div>
 	</footer>
 	</div>
+	<script type="text/javascript" src="../js/addloadEvent.js"></script>
+	<script type="text/javascript" src="../js/main.js">
+	</script>
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script>
+	$(document).ready(function(){
+		$(".logo").click(function() {
+			// var dizhi=$("#shou").attr("href");
+			// console.log(dizhi);
+			$("#main-wrapper").css("backgroundImage","url(../img/12.jpg)");
+			return false;
+		});
+	});
+	</script>
 </body>
 </html>

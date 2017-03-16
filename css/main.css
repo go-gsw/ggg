@@ -6,19 +6,25 @@
 	clear: both;
 }
 
+body{
+	font-family: "Helvetica","Arial",serif;
+}
 header
 {
 	background: rgba(0,0,0,0.3);
 }
 nav
 {
-	background: transparent;
+	position: fixed;
+	background-image: -webkit-linear-gradient(right, red, orange 25%, yellow 50%, green 75%, purple 100%);
 	height: 50px;
+	width: 100%;
+	z-index: 10;
 }
 #banner
 {
 	background: transparent;
-	height: 700px;
+	height: 900px;
 }
 nav ul
 {
@@ -38,7 +44,8 @@ nav ul li a
 	text-decoration: none;
 	display: inline-block;
 	height: inherit;
-	color: #fff;
+	color: #333;
+	font-weight: bold;
 }
 nav .logo
 {
@@ -59,10 +66,11 @@ nav .logo
 	text-align: center;
 	margin: 0 auto;
 	position: relative;
-	top: 180px;
+	top: 300px;
 }
 #banner .inner h1
 {
+	font-style: italic;
     margin: 0;
     font-weight: bold;
     color: #fff;
@@ -70,8 +78,8 @@ nav .logo
 }
 #banner .inner .more
 {
-	margin-top: 250px;
-	color: #fff;
+	margin-top: 300px;
+	color: #ccc;
 }
 
 h1
@@ -92,7 +100,8 @@ button
 #banner button
 {
 	padding: 10px 25px;
-	background: rgba(0,0,0,0.4);
+	background: rgba(0,0,0,0.5);
+	border-radius: 5px;
 }
 .sub-heading
 {
@@ -121,7 +130,7 @@ h2
 .green-section
 {
 	text-align: center;
-	background: rgb(4, 165, 148);
+	background: rgba(26, 95, 87, 0.94);
 	color: #fff;
 	padding: 50px 0;
 	padding-bottom: 20px;
@@ -129,8 +138,8 @@ h2
 
 .green-section .hr
 {
-	background: #05AF9D;
-	width: 50%;
+	background: #03796D;
+	width: 60%;
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
@@ -320,13 +329,13 @@ footer
 {
 	background: rgba(0,0,0,0.5);
 	color: #fff;
-	min-height: 150px;
+	min-height: 100px;
 	text-align: center;
 }
 
 .share-group
 {
-	padding: 50px;
+	padding: 40px;
 	display: block;
 	list-style: none;
 	margin:0 auto;
@@ -342,12 +351,11 @@ footer
 }
 
 
-
-.main-wrapper
+#main-wrapper
 {
-	background: #444 url(../img/12.jpg);
 	background-attachment: fixed;
 	background-repeat: no-repeat;/*不重复*/
 	background-size: cover;/*以封面的大小来确定大小*/
 	/*background-position: center;*//*居中*/
 }
+

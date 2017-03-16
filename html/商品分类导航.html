@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商品分类导航</title>
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
+	<style type="text/css">
+	*{
+		padding: 0;
+		font-size: 10px;
+	}
+	.topmenu{
+		display: block;
+		width: 220px;
+		border:2px solid red;
+		margin:0;
+		padding:0;
+	}
+	.toptitle{
+		height: 40px;
+		line-height: 40px;
+		text-align: left;
+		font-size: 15px;
+		font-weight: bold;
+		color: #fff;
+		background: red;
+		padding-left: 15px;
+	}
+	.topmenu li{
+		height: 30px;
+		line-height: 30px;
+		font-size: 14px;
+		font-weight: bold;
+		padding-left: 12px;
+		list-style: none;
+		text-align: left;
+		z-index: 3;
+		background-color: #f9f9f9;
+		background-image: url(../more2.png);
+		background-repeat: no-repeat;
+		background-position: right;
+	}
+	.topmenu li:hover{
+		background-color: white;
+		background-image: none;
+		border: 1px solid #ddd;
+		border-right: 0;
+		box-shadow: 0 0 8px #ddd;
+	}
+	.topmenu li a:hover{
+		text-decoration: underline;
+        font-weight: bold;
+        color: red;
+	}
+	.topmenu li a{
+		text-decoration: none;
+		color: gray;
+	}
+	.submenu{
+		display: none;
+		width: 715px;
+		height:500px;
+		left: 210px;
+		position: absolute;
+		top: 41.5px;
+		border: 1px solid #ddd;
+		background:white;
+		box-shadow: 0 0 8px #ddd;
+		z-index: 4;
+	}
+	.topmenu li:hover .submenu{
+		display: block;
+	}
+	.topmenu li:hover span{
+		background: white;
+		display: inline-block;
+		z-index: 20;
+		width: 20px;
+		height: 30px;
+		float: right;
+		position: relative;
+	}
+	.leftdiv{
+		margin:5px;
+		width: 490px;
+		float: left;
+	}
+	.rightdiv{
+		margin:5px;
+		width:200px;
+		float: left;
+	}
+	.leftdiv dl{
+		display:block;
+		padding-bottom:6px;
+		border-bottom:1px solid #eee;
+		border-bottom:60%;
+		overflow:hidden;
+	}
+	.leftdiv dl dt{
+		display:block;
+		float:left;
+		width:90px;
+		text-align:right;
+		height:22px;
+		line-height:22px;
+		padding-right:6px;
+		overflow:visible;
+	}
+	.leftdiv dl dt a{
+		color:red;
+		font-size:16px;
+		font-weight:bold;
+		text-decoration:underline;
+	}
+	.leftdiv dl dd{
+		display:block;
+		overflow:hidden;
+	}
+	.leftdiv dl dd a{
+		display:block;
+		padding-left:10px;
+		padding-right:10px;
+		margin:5px 0;
+		text-align:center;
+		float:left;
+		height:12px;
+		line-height:12px;
+		font-size:13px;
+		border-left:1px solid #ccc;
+	}
+	.rightdiv dl dd{
+		margin:3px 0;
+	}
+	.rightdiv dl dt{
+		color:red;
+		font-size:15px;
+		font-weight:bold;
+	}
+	.rightdiv dl dd a{
+		display:block;
+		font-size:13px;
+		color:#ccc;
+		line-height:22px;
+	}
+	.rightdiv dl dd a:hover{
+		color:#ccc;
+		font-weight:normal;
+	}
+	</style>
+
+</head>
+<body>
+	<ul class="topmenu">
+	<div class="toptitle">
+		全部商品分类
+	</div>
+		<li><a href="#">图书、音像、数字产品</a><span></span>
+			<div class="submenu">
+				<div class="leftdiv">
+					<dl>
+						<dt><a href="#">电子书</a></dt>
+						<dd>
+							<a href="#">免费</a>
+							<a href="#">小说</a>
+							<a href="#">文学</a>
+							<a href="#">经管</a>
+							<a href="#">励志与成功</a>
+							<a href="#">畅读VIP</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><a href="#">数字音乐</a></dt>
+						<dd>
+							<a href="#">通俗流行</a>
+							<a href="#">古典音乐</a>
+							<a href="#">摇滚说唱</a>
+							<a href="#">爵士蓝调</a>
+							<a href="#">乡村民谣</a>
+							<a href="#">有声读物</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><a href="#">音像</a></dt>
+						<dd>
+							<a href="#">音乐</a>
+							<a href="#">影视</a>
+							<a href="#">教育音像</a>
+							<a href="#">游戏</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><a href="#">文艺</a></dt>
+						<dd>
+							<a href="#">小说</a>
+							<a href="#">文学</a>
+							<a href="#">青春文学</a>
+							<a href="#">传记</a>
+							<a href="#">艺术</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><a href="#">人文社科</a></dt>
+						<dd>
+							<a href="#">历史</a>
+							<a href="#">心理学</a>
+							<a href="#">政治军事</a>
+							<a href="#">国学、古籍</a>
+							<a href="#">哲学、宗教</a>
+							<a href="#">社会科学</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><a href="#">电子书</a></dt>
+						<dd>
+							<a href="#">免费</a>
+							<a href="#">小说</a>
+							<a href="#">文学</a>
+							<a href="#">经管</a>
+							<a href="#">励志与成功</a>
+							<a href="#">畅读VIP</a>
+						</dd>
+					</dl>
+				</div>
+				<div class="rightdiv">
+					<dl>
+					<dd><a herf="https://www.baidu.com">
+					<img src="../img/11.jpg" width="180px"; height="80px" alt="家电">
+					</a>
+					</dd>
+					<dd><a herf="https://www.baidu.com">
+					<img src="../img/12.jpg" width="180px"; height="80px" alt="家电">
+					</a></dd>
+					</dl>
+					<dl>
+						<dt>推荐品牌</dt>
+						<dd>
+							<a href="#">旗舰店</a>
+							<a href="#">旗舰店</a>
+							<a href="#">旗舰店</a>
+							<a href="#">旗舰店</a>
+							<a href="#">旗舰店</a>
+							<a href="#">旗舰店</a>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</li>
+		<li><a href="#">家用电器</a><span></span>
+	        <div class="submenu">
+		        <div class="leftdiv">
+		        	<dl>
+						<dt><a href="#">冰箱</a></dt>
+						<dd>
+							<a href="#">双开门</a>
+							<a href="#">多开门</a>
+							<a href="#">对开门</a>
+							<a href="#">冰柜</a>
+							<a href="#">单门</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><a href="#">冰箱</a></dt>
+						<dd>
+							<a href="#">双开门</a>
+							<a href="#">多开门</a>
+							<a href="#">对开门</a>
+							<a href="#">冰柜</a>
+							<a href="#">单门</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><a href="#">冰箱</a></dt>
+						<dd>
+							<a href="#">双开门</a>
+							<a href="#">多开门</a>
+							<a href="#">对开门</a>
+							<a href="#">冰柜</a>
+							<a href="#">单门</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><a href="#">冰箱</a></dt>
+						<dd>
+							<a href="#">双开门</a>
+							<a href="#">多开门</a>
+							<a href="#">对开门</a>
+							<a href="#">冰柜</a>
+							<a href="#">单门</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><a href="#">冰箱</a></dt>
+						<dd>
+							<a href="#">双开门</a>
+							<a href="#">多开门</a>
+							<a href="#">对开门</a>
+							<a href="#">冰柜</a>
+							<a href="#">单门</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><a href="#">冰箱</a></dt>
+						<dd>
+							<a href="#">双开门</a>
+							<a href="#">多开门</a>
+							<a href="#">对开门</a>
+							<a href="#">冰柜</a>
+							<a href="#">单门</a>
+						</dd>
+					</dl>
+		        </div>
+		        <div class="rightdiv">
+		        	右侧广告推荐二级菜单
+		        </div>
+	        </div>
+		</li>
+		<li><a href="#">手机、数码</a><span></span>
+	        <div class="submenu">
+		        <div class="leftdiv">
+		        	<dl>
+						<dt><a href="#">电子书</a></dt>
+						<dd>
+
+						</dd>
+					</dl>
+		        </div>
+		        <div class="rightdiv">
+		        	右侧广告推荐二级菜单
+		        </div>
+	        </div>
+        </li>
+		<li><a href="#">电脑、办公</a><span></span>
+	        <div class="submenu">
+		        <div class="leftdiv">
+		        	<dl>
+						<dt><a href="#">电子书</a></dt>
+						<dd>
+
+						</dd>
+					</dl>
+		        </div>
+		        <div class="rightdiv">
+		        	右侧广告推荐二级菜单
+		        </div>
+	        </div>
+        </li>
+		<li><a href="#">家居、家具、家装、厨具</a><span></span>
+	        <div class="submenu">
+		        <div class="leftdiv">
+		        	<dl>
+						<dt><a href="#">电子书</a></dt>
+						<dd>
+
+						</dd>
+					</dl>
+		        </div>
+		        <div class="rightdiv">
+		        	右侧广告推荐二级菜单
+		        </div>
+	        </div>
+        </li>
+		<li><a href="#">服饰内衣、珠宝首饰</a><span></span>
+	        <div class="submenu">
+		        <div class="leftdiv">
+		        	<dl>
+						<dt><a href="#">电子书</a></dt>
+						<dd>
+
+						</dd>
+					</dl>
+		        </div>
+		        <div class="rightdiv">
+		        	右侧广告推荐二级菜单
+		        </div>
+	        </div>
+        </li>
+		<li><a href="#">个护化妆</a><span></span>
+	        <div class="submenu">
+		        <div class="leftdiv">
+		        	<dl>
+						<dt><a href="#">电子书</a></dt>
+						<dd>
+
+						</dd>
+					</dl>
+		        </div>
+		        <div class="rightdiv">
+		        	右侧广告推荐二级菜单
+		        </div>
+	        </div>
+        </li>
+		<li><a href="#">鞋靴、箱包、钟表、奢侈品</a><span></span>
+	        <div class="submenu">
+		        <div class="leftdiv">
+		        	<dl>
+						<dt><a href="#">电子书</a></dt>
+						<dd>
+
+						</dd>
+					</dl>
+		        </div>
+		        <div class="rightdiv">
+		        	右侧广告推荐二级菜单
+		        </div>
+	        </div>
+        </li>
+		<li><a href="#">运动户外</a><span></span>
+	        <div class="submenu">
+		        <div class="leftdiv">
+		        	<dl>
+						<dt><a href="#">电子书</a></dt>
+						<dd>
+
+						</dd>
+					</dl>
+		        </div>
+		        <div class="rightdiv">
+		        	右侧广告推荐二级菜单
+		        </div>
+	        </div>
+        </li>
+		<li><a href="#">汽车用品</a><span></span>
+	        <div class="submenu">
+		        <div class="leftdiv">
+		        	<dl>
+						<dt><a href="#">电子书</a></dt>
+						<dd>
+
+						</dd>
+					</dl>
+		        </div>
+		        <div class="rightdiv">
+		        	右侧广告推荐二级菜单
+		        </div>
+	        </div>
+        </li>
+		<li><a href="#">母婴、玩具乐器</a><span></span>
+	        <div class="submenu">
+		        <div class="leftdiv">
+		        	<dl>
+						<dt><a href="#">电子书</a></dt>
+						<dd>
+
+						</dd>
+					</dl>
+		        </div>
+		        <div class="rightdiv">
+		        	右侧广告推荐二级菜单
+		        </div>
+	        </div>
+        </li>
+		<li><a href="#">食品饮料、酒类、生鲜</a><span></span>
+	        <div class="submenu">
+		        <div class="leftdiv">
+		        	<dl>
+						<dt><a href="#">电子书</a></dt>
+						<dd>
+
+						</dd>
+					</dl>
+		        </div>
+		        <div class="rightdiv">
+		        	右侧广告推荐二级菜单
+		        </div>
+	        </div>
+        </li>
+		<li><a href="#">营养保健</a><span></span>
+	        <div class="submenu">
+		        <div class="leftdiv">
+		        	<dl>
+						<dt><a href="#">电子书</a></dt>
+						<dd>
+
+						</dd>
+					</dl>
+		        </div>
+		        <div class="rightdiv">
+		        	右侧广告推荐二级菜单
+		        </div>
+	        </div>
+        </li>
+		<li><a href="#">彩票、旅行、充值、票务</a><span></span>
+	        <div class="submenu">
+		        <div class="leftdiv">
+		        	<dl>
+						<dt><a href="#">电子书</a></dt>
+						<dd>
+
+						</dd>
+					</dl>
+		        </div>
+		        <div class="rightdiv">
+		        	右侧广告推荐二级菜单
+		        </div>
+	        </div>
+        </li>
+	</ul>
+</body>
+</html>
