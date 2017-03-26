@@ -11,12 +11,14 @@ body{
 }
 header
 {
-	background: rgba(0,0,0,0.3);
+	background: rgba(0,0,0,0.5);
 }
 nav
 {
 	position: fixed;
-	background-image: -webkit-linear-gradient(right, red, orange 25%, yellow 50%, green 75%, purple 100%);
+	/*background-image: -webkit-linear-gradient(right, red, 
+	orange 25%, yellow 50%, green 75%, purple 100%);*/
+	background: rgba(255,255,255,0.94);
 	height: 50px;
 	width: 100%;
 	z-index: 10;
@@ -58,7 +60,7 @@ nav .logo
 .logo a
 {
 	text-decoration: none;
-	color: #fff;
+	color: #000;
 }
 #banner .inner
 {
@@ -66,19 +68,41 @@ nav .logo
 	text-align: center;
 	margin: 0 auto;
 	position: relative;
-	top: 300px;
 }
-#banner .inner h1
+#banner .inner #understand
 {
-	font-style: italic;
+	top: 300px;	
+	position: relative;
+	display: block;
+	transition: transform 2s;
+	/*transition-delay: 0.5s;*/
+	-webkit-animation: mymove 2s ease-out;
+
+}
+@keyframes mymove{
+	0%{top:100px;}
+	100%{top:300px;}
+}
+#banner .inner #understand:hover 
+{
+	transform: rotateY(360deg);
+	-webkit-transform: rotateY(360deg);
+} 
+
+#banner .inner h1
+{	
+	/*斜体*/
+	/*font-style: oblique;*/
     margin: 0;
     font-weight: bold;
     color: #fff;
-
+	text-shadow: 3px 3px 3px #ccc;
 }
-#banner .inner .more
+#banner .inner #more
 {
-	margin-top: 300px;
+	position: relative;
+	top:600px;
+	margin: 0 auto;
 	color: #ccc;
 }
 
@@ -165,9 +189,20 @@ h2
 	border: 1.5px dashed rgba(146, 137, 137, 0.76);
 	background: rgba(1, 190, 191, 0.5);
 	transform: rotate(45deg);
+	transition: transform 1s ease;
 	margin:30px;
 }
 
+.green-section .icon-group .icon:hover
+{
+	transform: rotate(405deg);
+}
+.green-section .icon-group .icon img
+{
+	position: relative;
+	padding: 10 auto;
+	transform: rotate(-45deg);
+}
 
 .artical-preview1 > div
 {
@@ -353,6 +388,9 @@ footer
 
 #main-wrapper
 {
+	background-image:-webkit-linear-gradient(left top, 
+		rgba(50,50,50,0.5),red, 
+		orange 25%, yellow 50%, green 75%, purple 100%);
 	background-attachment: fixed;
 	background-repeat: no-repeat;/*不重复*/
 	background-size: cover;/*以封面的大小来确定大小*/

@@ -9,28 +9,32 @@
  -->
 </head>
 <body>
-	<div id="main-wrapper" style="background-color: #444; background-image:-webkit-linear-gradient(top, red, orange 25%, yellow 50%, green 75%, purple 100%);">
+	<div id="main-wrapper" style="background-color: #444;">
 	<header>
 		<nav>
-			<div class="logo"><a href="#">尚文</a></div>
+			<div class="logo"><a href="../img/12.jpg" id="ss">尚文</a></div>
 			<ul id="imagegallery">
 			<li><a href="../img/13.jpg" id="shou">首页</a></li>
-			<li><a href="#">第二页</a></li>
-			<li><a href="#">第三页</a></li>
-			<li><a href="#">第四页</a></li>
+			<li><a href="../img/11.jpg">二页</a></li>
+			<li><a href="../img/15.jpg">三页</a></li>
+			<li><a href="../img/14.jpg">四页</a></li>
 			<!-- li{item$}*7 -->
 			</ul>
 		</nav>
 		<div id="banner">
 			<div class="inner">
-			<h1>龚尚文</h1>
+			<div id="understand">
+			<h1>XXX</h1>
 			<p class="sub-heading">It's a great man.You mast cherish.</p>
 			<button>了解我</button>
+			</div>
+			<div id="more">
 			<div class="more">
 			more
 			</div>
-			<div id="more" style="visibility:visible">
-			<img src="../more_unfold.png" alt="向下" style="margin-top: 15px;">
+			<div id="more-img" style="visibility:visible">
+			<img src="../img/more_unfold.png" alt="向下" style="margin-top: 15px;">
+			</div>
 			</div>
 			</div>
 		</div>
@@ -46,13 +50,13 @@
 				</div>
 				<div class="icon-group">
 					<span class="icon">
-					<img src="" alt="">
+					<img src="../img/like.png" alt="">
 					</span>
 					<span class="icon">
-					<img src="" alt="">
+					<img src="../img/like.png" alt="">
 					</span>
 					<span class="icon">
-					<img src="" alt="">
+					<img src="../img/like.png" alt="">
 					</span>
 				</div>
 			</div>
@@ -145,9 +149,9 @@
 	<script>
 	$(document).ready(function(){
 		$(".logo").click(function() {
-			// var dizhi=$("#shou").attr("href");
-			// console.log(dizhi);
-			$("#main-wrapper").css("backgroundImage","url(../img/12.jpg)");
+			var dizhi= $("#ss").attr("href");
+			console.log(dizhi);
+			$("#main-wrapper").css("backgroundImage",'url('+dizhi+')');
 			return false;
 		});
 	});

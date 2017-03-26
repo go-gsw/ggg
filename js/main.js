@@ -1,5 +1,5 @@
 function moreee(){
-		var m=document.getElementById("more");
+		var m=document.getElementById("more-img");
 		if(m.style.visibility=="visible"){
 			m.style.visibility="hidden";
 		}else{
@@ -7,18 +7,7 @@ function moreee(){
 		}
 	}
 setInterval(moreee,800);
-/*通用型函数*/
-function addloadEvent(func){
-	var oldonload=window.onload;
-	if(typeof window.onload !="function"){
-		window.onload=func;
-	}else{
-		window.onload=function(){
-			oldonload();
-			func();
-		}
-	}
-}
+
 function prepareGallery(){
 	var gallery =document.getElementById("imagegallery");
 	var links=gallery.getElementsByTagName("a");
@@ -30,10 +19,11 @@ function prepareGallery(){
 }
 
 function showPic(whichpic){
-	// var source=whichpic.getAttribute("href");
-	// console.log(source);
+	var source=whichpic.getAttribute("href");
+	console.log(source);
 	var placeholder=document.getElementById("main-wrapper");
-	placeholder.style.backgroundImage="url(../img/13.jpg)";
+	/*DOM style属性不能用来检测外部CSS文件里的样式*/
+	placeholder.style.backgroundImage='url('+source+')';
 	// placeholder.setAttribute("background-image",source);
 	return true;
 }
@@ -44,6 +34,7 @@ addloadEvent(setInterval);
 
 
 /*把一个节点插入到另一个节点之后的通用函数*/
+/*insterAfter()*/
 /*function insertAfter(newElement,targetElement){
 	var parent =targetElement.parentNode;
 	if(parent.lastChild==targetElement){
