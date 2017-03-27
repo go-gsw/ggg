@@ -68,6 +68,11 @@ nav .logo
 	text-align: center;
 	margin: 0 auto;
 	position: relative;
+	/*设置透视perspective属性的元素就是被透视元素。
+	一般地，该属性只能设置在变形元素的父级或祖先级。
+	因为浏览器会为其子级的变形产生透视效果，但并不会为其自身产生透视效果。*/
+	/*透视距离perspective值越大越不明显*/
+	perspective: 300px;
 }
 #banner .inner #understand
 {
@@ -75,8 +80,9 @@ nav .logo
 	position: relative;
 	display: block;
 	transition: transform 2s;
-	/*transition-delay: 0.5s;*/
+	transition-delay: 0.3s;
 	-webkit-animation: mymove 2s ease-out;
+	-webkit-animation-delay:0.5s;
 
 }
 @keyframes mymove{
@@ -87,6 +93,7 @@ nav .logo
 {
 	transform: rotateY(360deg);
 	-webkit-transform: rotateY(360deg);
+	
 } 
 
 #banner .inner h1
