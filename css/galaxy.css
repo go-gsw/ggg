@@ -1,0 +1,76 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#solarsys{
+	width: 1000px;
+	height: 800px;
+	position: relative;
+	margin: 0 auto;
+	background-color: #000;
+	padding: 0;
+	transform: scale(1);
+}
+.sun{
+	position: absolute;
+	left: 457px;
+	top: 357px;
+	width: 90px;
+	height: 90px;
+	background-color: rgba(202, 118, 4, 0.93);
+	border-radius: 50%;
+	box-shadow: 0 0 10px rgba(202, 118, 4, 0.93),0 0 15px rgba(202, 118, 4, 0.93), 0 0 20px rgba(202, 118, 4, 0.93);
+}
+.mercuryOrbit{
+	left: 442.5px;
+	top: 342.5px;
+	height: 115px;
+	width:115px;
+	background-color: transparent;
+	border-radius: 50%;
+	border-style: dashed;
+	border-color: gray;
+	border-width: 1px;
+	position: absolute;
+
+}
+.mercury{
+	left: 437.5px;
+	top: 395px;
+	width: 10px;
+	height: 10px;
+	background-color: yellow;
+	border-radius: 50%;
+	position: absolute;
+	transform-origin: 62.5px 5px;
+	animation: mmm 1.5s infinite linear;
+}
+.venusOrbit{
+	left: 392.5px;
+	top: 292.5px;
+	height: 215px;
+	width:215px;
+	background-color: transparent;
+	border-radius: 50%;
+	border-style: dashed;
+	border-color: gray;
+	border-width: 1px;
+	position: absolute;
+
+}
+.venus{
+	left: 300px;
+	top: 305px;
+	width: 12px;
+	height: 12px;
+	background-color: gold;
+	border-radius: 50%;
+	position: absolute;
+	transform-origin: 91.5px 11px;
+	animation: mmm 5.5s infinite linear;
+}
+@keyframes mmm{
+	100%{
+		transform: rotate(-360deg);
+	}
+}
