@@ -80,7 +80,7 @@ nav .logo
 	position: relative;
 	display: block;
 	transition: transform 2s;
-	transition-delay: 0.3s;
+	/*transition-delay: 0.3s;*/
 	-webkit-animation: mymove 2s ease-out;
 	-webkit-animation-delay:0.5s;
 
