@@ -40,7 +40,7 @@
 	top: 394px;
 	width: 10px;
 	height: 10px;
-	background-color: yellow;
+	background-color: #893b9f;
 	border-radius: 50%;
 	position: absolute;
 	transform-origin: 62px 5px;
@@ -126,7 +126,7 @@
 	top: 388px;
 	width: 22px;
 	height: 22px;
-	background-color: red;
+	background-color: #944656;
 	border-radius: 50%;
 	position: absolute;
 	transform-origin: 188px 11px;
