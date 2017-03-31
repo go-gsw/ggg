@@ -9,6 +9,9 @@
 body{
 	font-family: "Helvetica","Arial",serif;
 }
+
+/*————————————————————————————————————————————————————————————————*/
+
 header
 {
 	background: rgba(0,0,0,0.5);
@@ -47,7 +50,7 @@ nav ul li a
 	display: inline-block;
 	height: inherit;
 	color: #333;
-	font-weight: bold;
+	font-weight: bolder;
 }
 nav .logo
 {
@@ -158,6 +161,7 @@ h2
 	margin: 20px auto;
 }
 
+/*——————————————————————————————————————————————————————————————————*/
 .green-section
 {
 	text-align: center;
@@ -219,13 +223,10 @@ h2
 .artical-preview1 > div
 {
 	float: left;
-	font-size: 0;
 }
-
 
 .artical-preview2 > div
 {
-	font-size: 0;
 	float: right;
 }
 
@@ -247,26 +248,147 @@ h2
 
 }
 
-.artical-preview1 
+.artical-preview1,.artical-preview2
 {
     background-color: rgba(255,255,255,0.05);
     position: relative;
-    display: flex;
+    overflow: hidden;
 }
 
+.artical-preview1 .img-section .caption,
+.artical-preview2 .img-section .caption
+{
+	/*content-box，border和padding不计算入width之内
 
+	padding-box，padding计算入width内
+
+	border-box，border和padding计算入width之内，其实就是怪异模式*/
+	box-sizing: border-box;
+	margin: auto;
+	position: absolute;
+	padding:50px;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+.artical-preview1 .img-section .caption .title,
+.artical-preview2 .img-section .caption .title
+{
+	/*居中对齐弹性盒的各项 <div> 元素：*/
+	align-items: center;
+	/*垂直排列 div 元素的子元素：horizontal vertical*/
+	-webkit-box-orient: vertical;
+	/*各项 <div> 元素排列方向 normal默认方向 reverse反方向*/
+    -webkit-box-direction: normal;
+    /*定义flex容器的主轴方向来决定felx子项在flex容器中的位置*/
+    /*row：主轴与行内轴方向作为默认的书写模式。即横向从左到右排列（左对齐）。
+	row-reverse：对齐方式与row相反。
+	column：主轴与块轴方向作为默认的书写模式。即纵向从上往下排列（顶对齐）。
+	column-reverse：对齐方式与column相反。*/
+    flex-direction: column;
+    /*通过使用 box-align and box-pack 属性，居中 div 框的子元素：*/
+    -webkit-box-pack:center;
+	-webkit-box-align:center;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: flex;
+	opacity: 0;
+	box-shadow: 0 0 30px 20px rgba(0,0,0,.3);
+	transition: opacity .5s
+}
+.artical-preview1 .img-section .caption .title .slideIn,
+.artical-preview2 .img-section .caption .title .slideIn
+{
+	margin: auto;
+	opacity: 1;
+}
+/*左右*/
+.artical-preview1 .img-section .caption .title::before,
+.artical-preview2 .img-section .caption .title::before
+{
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    border: 3px solid white;
+    border-width: 0px 3px;
+    visibility: hidden;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+/*上下*/
+.artical-preview1 .img-section .caption .title::after,
+.artical-preview2 .img-section .caption .title::after
+{
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    border: 3px solid white;
+    border-width: 3px 0px;
+    visibility: hidden;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+.artical-preview1 .img-section:hover,
+.artical-preview2 .img-section:hover
+{
+	/*transform: scale(1.3);
+	transition: all 1s ease;*/
+	box-shadow: 0 0 10px rgba(0,0,0,.3);
+	background-color: gray;
+	opacity: 0.5;
+}
+.artical-preview1 .img-section:hover  .title,
+.artical-preview2 .img-section:hover  .title
+{
+	opacity: .9;
+}
+.artical-preview1 .img-section:hover  .title::before,
+.artical-preview2 .img-section:hover  .title::before
+{
+
+	height: 100%;
+	visibility: visible;
+	top: 0;
+}
+.artical-preview1 .img-section:hover  .title::after,
+.artical-preview2 .img-section:hover  .title::after
+{
+	left: 0;
+	width: 100%;
+	visibility: visible;
+}
 .gray-section
 {
-	background: #123144
+	background: #123144;
+	color: white;
 }
 .gray-section .img-section
 {
 	width: 40%;
+	position: relative;
+	display: flex;
 }
 
 .img-section img
 {
 	width: 100%;
+	height: 100%;
 }
 .gray-section .text-section
 {
@@ -301,11 +423,11 @@ p
 	font-weight: bold;
 }
 
-
+/*——————————————————————————————————————————————————————————————————*/
 
 .purple-section
 {
-	background: rgb(55, 26, 86);
+	background: rgb(26, 50, 86);
 	color: #fff;
 	
 	padding: 80px;
@@ -328,7 +450,7 @@ p
 }
 .card-group
 {
-	padding: 20px;
+	padding: 40px 200px;
 }
 
 /*.card-group:after
@@ -346,11 +468,23 @@ p
 	min-height: 300px;
 	padding: 50px;
 	box-sizing: border-box;
+	transition: all 1s ease;
 	/*border: 1px solid white;*/
+}
+/*@keyframes kk{
+100%{
+	background: rgba(0,0,0,0.5);
+}}*/
+.card:first-child:hover,.card:nth-child(2):hover,
+.card:nth-child(3):hover,.card:nth-child(4):hover,
+.card:nth-child(5):hover,.card:nth-child(6):hover
+{
+	background: rgba(0,0,0,0.55);
 }
 .card:first-child
 {
 	background: rgba(0,0,0,0.05);
+	/*animation: kk 1s ease;*/
 }
 .card:nth-child(2)
 {
@@ -373,6 +507,7 @@ p
 	background: rgba(0,0,0,0.3);
 }
 
+/*————————————————————————————————————————————————————————————————*/
 
 footer
 {
@@ -402,9 +537,12 @@ footer
 
 #main-wrapper
 {
-	background-image:-webkit-linear-gradient(left top, 
+	/*background-image:-webkit-linear-gradient(left top, 
 		rgba(50,50,50,0.5),red, 
-		orange 25%, yellow 50%, green 75%, purple 100%);
+		orange 25%, yellow 50%, green 75%, purple 100%);*/
+	background-color: #159957;
+	background-image: -webkit-linear-gradient(
+		120deg, #155799, #159957);	
 	background-attachment: fixed;
 	background-repeat: no-repeat;/*不重复*/
 	background-size: cover;/*以封面的大小来确定大小*/
