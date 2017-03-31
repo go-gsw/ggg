@@ -164,7 +164,7 @@
 				computerWin[k]=6;
 				if(myWin[k]==5){
 					//存在一个K使得myWin[k]=5,说明第k种赢法被实现。
-					window.alert("你赢了");
+					window.confirm("你赢了");
 					over=true;
 				}
 			}
@@ -255,7 +255,7 @@
 							myWin[k]=6;
 							if(computerWin[k]==5){
 								//存在一个K使得computerWin[k]=5,说明第k种赢法被实现。
-								window.alert("电脑赢了");
+								window.confirm("电脑赢了");
 								over=true;
 							}
 						}
