@@ -22,6 +22,7 @@ nav
 	/*background-image: -webkit-linear-gradient(right, red, 
 	orange 25%, yellow 50%, green 75%, purple 100%);*/
 	background: rgba(255,255,255,0.94);
+	box-shadow: 0 1px 5px gray;
 	height: 50px;
 	width: 100%;
 	z-index: 10;
