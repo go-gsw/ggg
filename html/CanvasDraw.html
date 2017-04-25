@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	 <!-- 屏幕自适应，高，宽，初始比例，最小比例，最大比例，用户缩放 -->
+	<meta name="viewport"
+		content="height=device-height,
+		         width=device-width,
+		         initial-scale=1.0,
+		         minimum-scale=1.0,
+		         maximum-scale=1.0,
+		         user-scalable=no" 
+	/>
+	<title>CanvasDraw</title>
+	<link rel="stylesheet" href="../css/CanvasDraw.css">
+</head>
+<body>
+	<div class="drawImage">
+		<img src="../img/14.jpg" id="image" alt="蒙板">
+		<canvas id="canvas"></canvas>
+		<a href="javascript:reset()" class="button" id="reset-btn">ERSET</a>
+		<a href="javascript:show()" class="button" id="show-btn">SHOW</a>
+	</div>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/CanvasDraw.js"></script>
+</body>
+</html>

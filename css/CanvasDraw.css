@@ -1,0 +1,57 @@
+*{
+	margin:0;
+	padding:0;
+}
+.drawImage{
+	position:relative;
+	margin:0 auto;
+	overflow: hidden;
+}
+.drawImage img{
+	position: absolute;
+	display: block;
+	filter: blur(20px);
+	z-index: 100;
+}
+
+/*canvas的大小最好不要在css中设置要在js中*/
+.drawImage #canvas{
+	display: block;
+	position: absolute;
+	margin:0 auto;
+	left: 0;
+	top: 0;
+	z-index: 200;
+	/*background-color: red;*/
+}
+
+.button{
+	position: absolute;
+	display: block;
+	z-index: 300;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 5px;
+}
+
+ #reset-btn{
+	left: 50px;
+	bottom: 20px;
+	background-color: #058;
+}
+ #reset-btn:hover{
+	background-color: #047;
+}
+
+ #show-btn{
+	right: 50px;
+	bottom: 20px;
+	background-color: #087;
+}
+ #show-btn:hover{
+	background-color: #074;
+}
