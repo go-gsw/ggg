@@ -8,3 +8,5 @@ This is an [XXX](https://go-gsw.github.io/ggg/html/index.html).
 [简陋的太阳系](http://go-gsw.github.io/ggg/html/galaxy.html)
 
 [CanvasClock](http://go-gsw.github.io/ggg/html/CanvasClock.html)
+
+[CanvasDraw](http://go-gsw.github.io/ggg/html/CanvasDraw.html)
