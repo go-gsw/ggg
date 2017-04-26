@@ -92,7 +92,9 @@ function show(){
 		clipping.r+=30;
 		// clipping.reg+=Math.PI/12;
 		// var maxR=can.width/Math.cos(2*Math.PI/12);
-		var maxR=2*can.width/Math.cos(2*Math.PI/12);
+		var maxR=Math.max((2*can.width),
+			              (2*can.height));
+		console.log(maxR);
 		if(clipping.r>maxR){
 			clearInterval(theanimation);
 		}else{
