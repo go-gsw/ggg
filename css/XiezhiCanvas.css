@@ -1,0 +1,73 @@
+/*在css中写的canvas的大小只是在html中的显示大小，并不是实际像素大小。
+最好在js中编写canvas的大小
+*/
+*{
+	margin: 0;
+	padding: 0;
+}
+#canvas{
+	display: block;
+	margin: auto;
+	/*border: 1px solid #ccc;*/
+}
+#testCanvasDrawDashedLine{
+	display: block;
+}
+#container{
+	width :800px;
+	margin: auto;
+}
+#clear{
+	float: right;
+	margin: 10px 0 0 10px;
+	border: 2px solid #aaa;
+	width :80px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: white;
+	font-weight: bold;
+	font-family: Microsoft Yahei,Arial;
+}
+#clear:hover{
+	background-color: #ccc;
+}
+.clearfix{
+	clear: both;
+}
+.color{
+	float: left;
+	margin: 10px 10px 0 0 ;
+	border: 5px solid #fff;
+	width: 	40px;
+	height: 40px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.color:hover{
+	border: 5px solid violet;
+}
+.btn_selected{
+	border: 5px solid blueviolet;
+}
+#black_btn{
+	background-color: black;
+}
+#blue_btn{
+	background-color: blue;
+}
+#yellow_btn{
+	background-color: yellow;
+}
+#red_btn{
+	background-color: red;
+}
+#gray_btn{
+	background-color: gray;
+}
+#orange_btn{
+	background-color: orange;
+}

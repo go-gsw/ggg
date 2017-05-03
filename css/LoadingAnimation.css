@@ -1,0 +1,127 @@
+*{
+	margin:0;
+	padding:0;
+}
+#container{
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	/*根据视口的高宽来设置居中*/
+	/*vw,vh长度单位，Xvw=(X*视口的宽度)/100,同理*/
+	/*calc()计算元素*/
+	margin-left: calc( 50vw - 150px);
+    margin-top: calc( 50vh - 150px);
+}
+.three-quarters-circle{
+	position: absolute;
+	box-sizing: border-box;
+	left:80px;
+	top: 80px;
+	width: 140px;
+	height: 140px;
+	border: 2px solid red;
+	border-top-color:green;
+	border-left-color: blue;
+	border-right-color: yellow;
+	border-radius: 50%;
+	background-color: transparent; 
+	animation: mm .8s linear infinite;
+}
+@keyframes mm{
+	100%{
+		transform: rotate(1turn);
+	}
+}
+
+/*创建两个半圆*/
+/*第一种有bug*/
+#full-circle{
+	position: absolute;
+	box-sizing: border-box;
+	z-index: 1;
+	width: 0;
+	height: 0;
+	left: 100px;
+	top: 100px;
+	/*border-radius: 50%;*/
+	/*border:50px solid rgb(251,139,189);*/
+	border:50px solid white;
+	background-color:  rgb(255,41,140);
+	border-top-left-radius: 100px;
+	border-bottom-left-radius: 100px;
+
+	border-top-right-radius: 100px;
+	border-bottom-right-radius: 100px;
+
+	/*border-top-color: rgb(255,41,140);
+	border-left-color: rgb(255,41,140);*/
+	border-right-color: rgb(251,139,189);
+	border-bottom-color: rgb(251,139,189);
+	transform: rotate(-45deg);
+}
+/*第二种*/
+.full-circle{
+	position: absolute;
+	box-sizing: border-box;
+	z-index: 1;
+	width: 100px;
+	height: 100px;
+	left: 100px;
+	top: 100px;
+	border-radius: 50%;
+	background-color: rgb(251,139,189);
+}
+.full-circle .half-circle{
+	position: absolute;
+	box-sizing: border-box;
+	z-index: 2;
+	width: 50px;
+	height: 100px;
+	left: 0;
+	top: 0;
+	border-top-left-radius: 100px;
+	border-bottom-left-radius: 100px;
+	background-color: rgb(255,41,140);
+}
+
+/*创建顶层动画*/
+.two-quarters-circle{
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 100px;
+	top: 100px;
+	border-radius: 50%;
+	border:50px solid transparent;
+	transform: rotate(45deg);
+}
+#half-left{
+	border-left-color: rgb(251,139,189);
+    border-bottom-color: rgb(251,139,189);
+    z-index: 10;
+    animation:showleft 2s linear infinite;
+}
+#half-right{
+    border-left-color: rgb(255,41,140);
+    border-bottom-color: rgb(255,41,140);
+    
+    animation: showRight 2s linear infinite;
+    animation-delay: 0.50s;
+    z-index: 5;
+}
+@keyframes showleft{
+	0%{transform: rotate(45deg);}
+	25%{transform: rotate(-135deg);}
+	50%{transform: rotate(-135deg);} /*开始等待*/
+	75%{transform: rotate(-315deg);}
+	100%{transform: rotate(-315deg);}/*开始等待*/
+}
+@keyframes showRight{
+	0%{transform: rotate(45deg);z-index: 10}
+	25%{transform: rotate(-135deg);z-index: 10}
+	50%{transform: rotate(-135deg);z-index: 10}
+	50.0001%{transform: rotate(-135deg);z-index: 5}
+	75%{transform: rotate(-315deg);z-index: 5}
+	99.9999%{transform: rotate(-315deg);z-index: 5}
+	100%{transform: rotate(-315deg);z-index: 10}
+}
