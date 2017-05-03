@@ -15,6 +15,7 @@ can.height=canvasHeight;
 
 
 DrawGrid();
+$("#canvas").css('border-radius',canvasWidth/200+'px');
 $("#container").css('width',canvasWidth+"px");
 $("#clear").click(
 	function(event){
@@ -136,9 +137,9 @@ can.addEventListener('touchmove',function(e){
 })
 
 //计算笔画的宽度
-var maxLinewidth=canvasWidth/20;
+var maxLinewidth=canvasWidth/22;
 var minLinewidth=maxLinewidth/15;
-var maxStrokeV=10;
+var maxStrokeV=8;
 var minStrokeV=maxStrokeV/100;
 
 
@@ -147,7 +148,7 @@ function calLineWidth(s,t){
 	if(v<minStrokeV){
 		return maxLinewidth;
 	}else if(v>=maxStrokeV){
-		return minLinewidth;
+		return minLinewidth+(v-maxStrokeV)/(maxStrokeV-minStrokeV)*(maxLinewidth-minLinewidth);
 	}else return maxLinewidth-(v-minStrokeV)/(maxStrokeV-minStrokeV)*(maxLinewidth-minLinewidth);
 
 }
