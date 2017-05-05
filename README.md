@@ -10,3 +10,5 @@ This is an [XXX](https://go-gsw.github.io/ggg/html/index.html).
 [CanvasClock](http://go-gsw.github.io/ggg/html/CanvasClock.html)
 
 [CanvasDraw](http://go-gsw.github.io/ggg/html/CanvasDraw.html)
+
+[写字Canvas](http://go-gsw.github.io/ggg/html/XiezhiCanvas.html)
