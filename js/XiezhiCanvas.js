@@ -19,6 +19,7 @@ $("#canvas").css('border-radius',canvasWidth/200+'px');
 $("#container").css('width',canvasWidth+"px");
 $("#clear").click(
 	function(event){
+		//清除Canvas画布,重新绘画。
 		ctx.clearRect(0,0,canvasWidth,canvasHeight);
 		DrawGrid();
 	}
