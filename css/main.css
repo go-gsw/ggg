@@ -25,7 +25,7 @@ nav
 	box-shadow: 0 1px 5px gray;
 	height: 50px;
 	width: 100%;
-	z-index: 10;
+	z-index: 100;
 }
 #banner
 {
@@ -64,6 +64,9 @@ nav .logo
 .logo a
 {
 	text-decoration: none;
+	/*height: inherit;*/
+	display: block;
+	/*line-height: inherit;*/
 	color: #000;
 }
 #banner .inner
@@ -85,21 +88,71 @@ nav .logo
 	display: block;
 	transition: transform 2s;
 	/*transition-delay: 0.3s;*/
-	-webkit-animation: mymove 2s ease-out;
-	-webkit-animation-delay:0.5s;
+	-webkit-animation: mymove 1s ease-out;
+	-webkit-animation-delay:0.1s;
 
 }
 @keyframes mymove{
 	0%{top:100px;}
 	100%{top:300px;}
 }
-#banner .inner #understand:hover 
+/*#banner .inner #understand:hover 
 {
 	transform: rotateY(360deg);
 	-webkit-transform: rotateY(360deg);
 	
-} 
+} */
+#banner .inner #understand .title{
+	/*position: relative;*/
+	/*display: flex;*/
+	width: 100%;
+	height: 100%;
 
+}
+#banner .inner #understand .title:before{
+	content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 0;
+    /*overflow: hidden;*/
+    border: 2px solid #ccc;
+    border-width: 0px 2px;
+    visibility: hidden;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+#banner .inner #understand .title:after{
+	content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 0;
+    height: 100%;
+    /*overflow: hidden;*/
+    border: 2px solid #ccc;
+    border-width: 2px 0px;
+    visibility: hidden;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+#banner .inner #understand:hover .title::before{
+	height: 100%;
+	top: 0;
+	visibility: visible;
+}
+#banner .inner #understand:hover .title::after{
+	width: 100%;
+	left: 0;
+	visibility: visible;
+}
 #banner .inner h1
 {	
 	/*斜体*/
@@ -117,11 +170,11 @@ nav .logo
 	color: #ccc;
 }
 
-h1
+#banner .inner h1
 {
 	padding: 12px;
-	border-top: 1.5px solid #fff;
-	border-bottom:1.5px solid #fff;
+	/*border-top: 1.5px solid #fff;
+	border-bottom:1.5px solid #fff;*/
 }
 
 
@@ -130,10 +183,11 @@ button
 	border: none;
 	background: #333;
 	color: #eee;
-	padding: 10px;
+	padding: 20px;
 }
 #banner button
 {
+	margin-bottom: 10px;
 	padding: 10px 25px;
 	background: rgba(0,0,0,0.5);
 	border-radius: 5px;
@@ -255,7 +309,10 @@ h2
     position: relative;
     overflow: hidden;
 }
-
+.artical-preview1 .img-section，
+.artical-preview2 .img-section{
+	z-index: 1;
+}
 .artical-preview1 .img-section .caption,
 .artical-preview2 .img-section .caption
 {
@@ -270,7 +327,7 @@ h2
 	padding:50px;
 	width: 100%;
 	height: 100%;
-	z-index: 1;
+	z-index: 10;
 }
 .artical-preview1 .img-section .caption .title,
 .artical-preview2 .img-section .caption .title
@@ -345,28 +402,31 @@ h2
     -moz-transition: all .5s;
     transition: all .5s;
 }
-.artical-preview1 .img-section:hover,
-.artical-preview2 .img-section:hover
+.artical-preview1 .img-section .caption:hover,
+.artical-preview2 .img-section .caption:hover
 {
-	/*transform: scale(1.3);
+	/*transform: scale(1.0);
 	transition: all 1s ease;*/
 	box-shadow: 0 0 10px rgba(0,0,0,.3);
-	background-color: gray;
-	opacity: 0.5;
+	background-color: black;
+	opacity: .3;
 }
 .artical-preview1 .img-section:hover  .title,
 .artical-preview2 .img-section:hover  .title
 {
+	transition: all .5s ease;
 	opacity: .9;
 }
+/*左右边框上升全高*/
 .artical-preview1 .img-section:hover  .title::before,
 .artical-preview2 .img-section:hover  .title::before
 {
 
 	height: 100%;
-	visibility: visible;
 	top: 0;
+	visibility: visible;
 }
+/*上下边框扩充全宽*/
 .artical-preview1 .img-section:hover  .title::after,
 .artical-preview2 .img-section:hover  .title::after
 {
@@ -512,15 +572,15 @@ p
 
 footer
 {
-	background: rgba(0,0,0,0.5);
+	background: rgba(0,0,0,0.75);
 	color: #fff;
-	min-height: 100px;
+	min-height: 80px;
 	text-align: center;
 }
 
 .share-group
 {
-	padding: 40px;
+	padding: 20px;
 	display: block;
 	list-style: none;
 	margin:0 auto;
@@ -528,7 +588,15 @@ footer
 .share-group li
 {
 	display: inline-block;
-	padding: 15px;
+	cursor: pointer;
+	padding: 10px;
+}
+.share-group li:hover{
+	font-weight: bold;
+	text-decoration: underline;
+}
+footer span{
+	margin-bottom: 10px;
 }
 .copy
 {
