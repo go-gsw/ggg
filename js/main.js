@@ -1,3 +1,4 @@
+//向下闪烁的箭头
 function moreee(){
 		var m=document.getElementById("more-img");
 		if(m.style.visibility=="visible"){
@@ -8,6 +9,7 @@ function moreee(){
 	}
 setInterval(moreee,800);
 
+//改变背景图片
 function prepareGallery(){
 	var gallery =document.getElementById("imagegallery");
 	var links=gallery.getElementsByTagName("a");
