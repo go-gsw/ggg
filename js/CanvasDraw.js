@@ -48,14 +48,14 @@ function setclipping(clipping){
 	//画圆形剪辑区域
 	// ctx.arc(clipping.x,clipping.y,clipping.r,0,2*Math.PI,false);
 	//画三角形
-	/*ctx.moveTo(clipping.x,clipping.y-clipping.r);
+	ctx.moveTo(clipping.x,clipping.y-clipping.r);
 	ctx.lineTo(clipping.x+clipping.r*Math.cos(2*Math.PI/12),
 			   clipping.y+clipping.r*Math.sin(2*Math.PI/12));
 	ctx.lineTo(clipping.x-clipping.r*Math.cos(2*Math.PI/12),
 		       clipping.y+clipping.r*Math.sin(2*Math.PI/12));
-	ctx.lineTo(clipping.x,clipping.y-clipping.r);*/
+	ctx.lineTo(clipping.x,clipping.y-clipping.r);
 	//旋转三角形
-	ctx.moveTo(clipping.x+clipping.r*Math.cos(Math.PI/2+clipping.reg),
+	/*ctx.moveTo(clipping.x+clipping.r*Math.cos(Math.PI/2+clipping.reg),
 		       clipping.y-clipping.r*Math.sin(Math.PI/2+clipping.reg));
 
 	ctx.lineTo(clipping.x+clipping.r*Math.sin(8*Math.PI/12+clipping.reg),
@@ -65,8 +65,9 @@ function setclipping(clipping){
 		       clipping.y-clipping.r*Math.cos(16*Math.PI/12+clipping.reg));
 
 	ctx.lineTo(clipping.x+clipping.r*Math.cos(Math.PI/2+clipping.reg),
-		       clipping.y-clipping.r*Math.sin(Math.PI/2+clipping.reg));
-	ctx.clip()
+		       clipping.y-clipping.r*Math.sin(Math.PI/2+clipping.reg));*/
+
+	ctx.clip()	
 }
 
 function draw(image,clipping){
@@ -77,7 +78,7 @@ function draw(image,clipping){
 	ctx.drawImage(image,leftmargin,topmargin,
 		          can.width,can.height,0,0,
 		          can.width,can.height);
-	ctx.restore()
+	ctx.restore();
 }
 
 
@@ -92,6 +93,7 @@ function show(){
 		clipping.r+=30;
 		// clipping.reg+=Math.PI/12;
 		// var maxR=can.width/Math.cos(2*Math.PI/12);
+
 		var maxR=Math.max(2*can.width,2*can.height);
 		// console.log(maxR);
 		if(clipping.r>maxR){
